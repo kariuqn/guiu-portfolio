@@ -1,0 +1,587 @@
+/* 全体の基本設定 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* 背景色をあたたかみのある生成り色に設定 */
+  background-color: #fcf8eb; 
+  font-family: sans-serif;
+  color: #333;
+}
+
+/* ==========================================
+   1. ヘッダーエリア（緑の帯・共通）
+========================================== */
+.site-header {
+  background-color: #00607b; 
+  color: #ffffff;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column; /* 縦並び（2段）にする */
+  align-items: center;    /* 中央揃えにする */
+  gap: 0.8rem;            /* 1段目と2段目のすき間 */
+}
+
+/* 1段目：サイン（ロゴ） */
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffd54f; /* 黄色の文字色 */
+  letter-spacing: 2px;
+}
+
+/* 2段目：SNS・問い合わせアイコン */
+.sns-links {
+  display: flex;
+  gap: 1.2rem;   /* アイコン同士の間隔 */
+}
+
+.sns-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: opacity 0.2s;
+}
+
+.sns-links a:hover {
+  opacity: 0.7;
+}
+
+/* --- 2. メインエリア --- */
+.main-content {
+  display: flex;
+  justify-content: center; /* 中央に寄せる */
+  align-items: center;
+  min-height: calc(100vh - 80px); /* 画面の高さいっぱいに広げる */
+  padding: 40px 20px;
+}
+
+.main-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  max-width: 800px;
+  height: 450px;
+  border: 3px solid #000000; /* 黒い太枠 */
+  background-color: #ffffff;
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.6;
+  transition: opacity 0.3s;
+}
+
+/* ホバー（マウスを乗せた時）のちょっとした演出 */
+.main-visual:hover {
+  opacity: 0.8;
+}
+/* ==========================================
+   全体設定
+========================================== */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fdf2e9; /* 画像通りのあたたかい生成り色 */
+  font-family: sans-serif;
+  color: #333333;
+}
+
+/* ==========================================
+   1. ヘッダーエリア
+========================================== */
+.site-header {
+  background-color: #00646d; 
+  padding: 1.5rem 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* --- 上段：サイン（ロゴ） --- */
+.header-top {
+  display: flex;
+  justify-content: center;
+}
+
+.site-logo-img {
+  height: 60px; /* ロゴ画像の高さ */
+  width: auto;
+  display: block;
+}
+
+/* --- 下段：ナビ ＆ アイコン --- */
+.header-bottom {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+
+/* 中央：Top / Gallery */
+.main-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+}
+
+/* 右側：SNS・問い合わせアイコン */
+.sns-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.sns-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.sns-links a:hover {
+  opacity: 0.8;
+}
+
+/* ==========================================
+   2. ギャラリーエリア（シリーズ区切り & 右下装飾）
+========================================== */
+
+/* ギャラリー全体（右下画像を固定配置するための基準を設定） */
+.gallery-content {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 4rem 0 8rem; /* 下に高さを設けて右下画像が重ならないように設定 */
+  padding: 0 8vw;     /* 左右の大きな余白 */
+}
+
+/* シリーズごとのブロック（グループ同士の上下間隔） */
+.gallery-section {
+  margin-bottom: 5rem; /* シリーズ間のすき間 */
+}
+
+/* シリーズタイトル（中央揃え・オレンジ系の配色例） */
+.series-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff6c43;      /* タイトルの色（お好みで調整してください） */
+  margin-bottom: 2rem; /* タイトルと画像のすき間 */
+  letter-spacing: 2px;
+}
+
+/* 横5列のグリッド配置 */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;              /* 作品どうしの隙間をゼロに */
+}
+
+/* 正方形の作品枠 */
+.gallery-item {
+  aspect-ratio: 1 / 1;
+  background-color: #ffffff;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+  transition: transform 0.2s ease;
+}
+
+.gallery-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item:hover {
+  transform: translateY(-3px);
+}
+
+/* 右下の装飾画像 */
+.bottom-decor-img {
+  position: absolute;
+  right: 6vw;         /* 右端からの位置 */
+  bottom: -20px;      /* 一番下からはみ出す位置 */
+  height: 90px;       /* 画像の大きさ */
+  width: auto;
+  pointer-events: none;
+}
+
+
+/* 画面が狭いスマホ表示時の自動調整 */
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr); /* タブレット：横3列 */
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr); /* スマホ：横2列 */
+  }
+  
+  .header-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .header-dummy {
+    display: none;
+  }
+}
+/* ==========================================
+   動画サムネイル＆再生ボタンアイコンの設定
+========================================== */
+
+/* 動画アイテムの枠 */
+.gallery-item.video-item {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 再生ボタンアイコン（中央配置） */
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  background-color: rgba(0, 0, 0, 0.6); /* 半透明の黒背景 */
+  color: #ffffff;                        /* 再生マークの色 */
+  border-radius: 50%;                    /* 丸型 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  padding-left: 3px;                     /* 三角アイコンの見た目中央調整 */
+  pointer-events: none;                  /* アイコン自体のクリックを邪魔しない */
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+/* ホバー時に再生ボタンを少し大きく/明るくする */
+.gallery-item.video-item:hover .play-icon {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* ホバー時に生成される video タグのスタイル */
+.gallery-item.video-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* ==========================================
+   動画拡大モーダルのCSS
+========================================== */
+
+/* 1. モーダル全体の初期状態（隠しておく） */
+.video-modal {
+  display: none;          /* 通常は完全に非表示 */
+  position: fixed;        /* 画面に固定 */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9); /* 黒背景 */
+  align-items: center;    /* 中央揃え */
+  justify-content: center;
+  z-index: 10000;         /* 確実に一番手前に */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* 2. JavaScriptで .active クラスがついた時の状態（表示する） */
+.video-modal.active {
+  display: flex !important; /* 強制的にflex表示にする */
+  opacity: 1;
+}
+
+/* 3. モーダル内の動画エリア */
+.modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.modal-content video {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* 4. 閉じる（×）ボタン */
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 50px;
+  cursor: pointer;
+  z-index: 10001;
+  line-height: 1;
+}
+
+.modal-close-btn:hover {
+  transform: scale(1.2); /* ホバー時に少し大きく */
+}
+/* ==========================================
+   Lightbox の件数表記（image 1 of 32）を非表示にする
+========================================== */
+.lb-number {
+  display: none !important;
+}
+/* ==========================================
+   4. お問い合わせページ（contact）用スタイル
+========================================== */
+.contact-content {
+  padding: 3rem 1.5rem;
+  max-width: 600px; /* フォームが広がりすぎない見やすい幅 */
+  margin: 0 auto;
+}
+
+.contact-content h2 {
+  text-align: center;
+  color: #00695c;
+  margin-bottom: 0.5rem;
+}
+
+.contact-description {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  color: #555555;
+}
+
+/* フォーム全体の枠 */
+.contact-form {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* 必須マーク */
+.required {
+  background-color: #00695c;
+  color: #ffffff;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  margin-left: 0.3rem;
+}
+
+/* 入力欄（テキスト・メール・本文） */
+.form-group input,
+.form-group textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: #fafafa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #00695c;
+  background-color: #ffffff;
+}
+
+/* 送信ボタン */
+.submit-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #00695c;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #004d40;
+}
+/* ==========================================
+   TOPページ専用：フェードスライドショー & グラデーション
+========================================== */
+
+/* メインエリア：画面いっぱいに広げる */
+.top-main {
+  width: 100vw;               /* ウィンドウの横幅100% */
+  height: calc(100vh - 120px);/* ウィンドウの高さ100%（ヘッダー分の高さを引く設定） */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* スライドショーの外枠：ウィンドウサイズに連動 */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0; /* 画面いっぱいに広げるため角丸を解除 */
+}
+
+/* 画像：枠に合わせてピッタリ拡大縮小 */
+.slide-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 画面比率が変わっても崩れず綺麗に全体に収める */
+  opacity: 0;
+  animation: fadeSlide 18s infinite ease-in-out;
+}
+
+/* 3枚の画像を重ねて配置 */
+.slide-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 枠いっぱいに綺麗に収める */
+  opacity: 0;
+  animation: fadeSlide 18s infinite ease-in-out; /* 全体で18秒（6秒×3枚）ループ */
+}
+
+/* 1枚目・2枚目・3枚目の切り替えタイミングずらし */
+.slide-img:nth-child(1) {
+  animation-delay: 0s;
+}
+.slide-img:nth-child(2) {
+  animation-delay: 6s;
+}
+.slide-img:nth-child(3) {
+  animation-delay: 12s;
+}
+
+/* CSSキーフレームアニメーション（フェードイン・フェードアウト） */
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+  }
+  6% {
+    opacity: 1; /* 最初の約1秒でフワッと表示 */
+  }
+  33% {
+    opacity: 1; /* 6秒目まで表示をキープ */
+  }
+  39% {
+    opacity: 0; /* 次の1秒でフワッと消える */
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* --- 下部グラデーション（背景色 #fdf2e9 に溶け込ませる） --- */
+.fade-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%; /* 下部40%の部分をグラデーションにする設定 */
+  /* 透明から背景色の生成り色（#fdf2e9）へなだらかに変化 */
+  background: linear-gradient(to bottom, rgba(253, 242, 233, 0) 0%, #fdf2e9 100%);
+  pointer-events: none; /* 下の画像への操作を邪魔しない設定 */
+}
+
+
+/* ==========================================
+   画面右下固定の装飾画像（ページトップボタン）
+========================================== */
+
+/* 1. 配置と大きさの設定 */
+.fixed-decor-btn {
+  position: fixed;     /* 画面に対して固定（スクロールしてもついてくる） */
+  right: 30px;          /* 右端からの距離 */
+  bottom: 30px;         /* 下端からの距離 */
+  z-index: 100;         /* 他の要素よりも一番手前に表示 */
+  display: block;       /* リンク全体をブロック要素に */
+  
+  /* イラスト自体の大きさ */
+  height: 90px;         /* ← ここでイラストの大きさを調整（お好みで） */
+  width: auto;          
+  
+  /* クリックアニメーションのための準備（中心を基準に動かす） */
+  transform-origin: center center;
+  transition: transform 0.2s ease; /* ホバー時の動きを滑らかに（オプション） */
+}
+
+.fixed-decor-btn img {
+  height: 100%;         /* 親要素（aタグ）の高さに合わせる */
+  width: auto;
+  display: block;
+}
+
+/* 2. ホバー時の効果（オプション：少し浮く） */
+.fixed-decor-btn:hover {
+  transform: translateY(-5px); /* マウスを乗せると少し上に移動 */
+}
+
+/* 3. クリックした瞬間（一瞬小さくなる） */
+/* このクラスはJavaScriptで一瞬だけ追加されます */
+.fixed-decor-btn.clicked {
+  transform: scale(0.8); /* 80%の大きさに縮小 */
+  transition: transform 0.1s ease-out; /* 縮む動きは素早く */
+}
+

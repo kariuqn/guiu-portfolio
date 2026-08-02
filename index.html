@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>私のイラストポートフォリオ</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ヘッダーエリア（緑の帯） -->
+<header class="site-header">
+
+  <!-- 上段：サイン（画像ロゴ） -->
+  <div class="header-top">
+    <a href="index.html">
+      <img src="sign.png" alt="サイン" class="site-logo-img">
+    </a>
+  </div>
+
+  <!-- 下段：左・中央（ナビ）・右（アイコン） -->
+  <div class="header-bottom">
+    <div class="header-dummy"></div> <!-- 左側の配置用バランスダミー -->
+
+    <!-- 中央：トップ ＆ ギャラリー リンク -->
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Top</a>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+    </nav>
+
+    <!-- 右側：各種アイコン -->
+    <nav class="sns-links">
+      <a href="https://www.instagram.com/guiurnrn/?hl=ja" target="_blank" rel="noopener noreferrer" title="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="" target="_blank" rel="noopener noreferrer" title="Shop">
+        <i class="fa-solid fa-bag-shopping"></i>
+      </a>
+      <a href="contact.html" title="Contact">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main class="top-main">
+  <!-- スライドショーエリア -->
+  <div class="slideshow-container">
+    <img src="20210403.png" alt="メインイラスト1" class="slide-img">
+    <img src="20220705.png" alt="メインイラスト2" class="slide-img">
+    <img src="20240201.png" alt="メインイラスト3" class="slide-img">
+
+    <!-- 下部を背景色へ溶け込ませるグラデーションレイヤー -->
+    <div class="fade-overlay"></div>
+  </div>
+</main>
+
+</body>
+</html>
