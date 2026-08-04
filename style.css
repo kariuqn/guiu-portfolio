@@ -550,23 +550,10 @@ header {
 /* スマホ表示（画面幅768px以下）のときだけトリミング位置を変更 */
 @media screen and (max-width: 768px) {
   .slide-img {
-    /* 順序を「center top（中央・上）」に変更！これで中央揃えになります */
-    object-position: center top; 
+    /* 画像の左端を中心に切り取って表示したい場合は left center を指定します */
+    object-position: left center !important;
   }
 }
-
-/* 3枚の画像を重ねて配置 */
-.slide-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 枠いっぱいに綺麗に収める */
-  opacity: 0;
-  animation: fadeSlide 18s infinite ease-in-out; /* 全体で18秒（6秒×3枚）ループ */
-}
-
 /* 1枚目・2枚目・3枚目の切り替えタイミングずらし */
 .slide-img:nth-child(1) {
   animation-delay: 0s;
