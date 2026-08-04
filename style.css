@@ -143,6 +143,51 @@ body {
 .nav-link:hover {
   opacity: 0.8;
 }
+/* ヘッダー自体を「位置の基準」にする設定（追加） */
+header {
+  position: relative;
+}
+
+.copyright-notice {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 100;
+  /* ...省略... */
+}
+/* 左下に固定表示する禁止事項テキスト（白字） */
+.copyright-notice {
+  position: absolute;
+  bottom: 5px;      /* 【左下指定】下からの位置 */
+  left: 20px;        /* 【左下指定】左からの位置 */
+  z-index: 100;      /* 他の画像や要素より手前に表示 */
+  font-size: 10px;   /* 文字サイズ（すっきり見せる小さめサイズ） */
+  line-height: 1.4;
+  color: #ffffff;    /* 文字色：白 */
+  /* 明るい背景の画像が重なっても読めるように、かすかな黒影を追加 */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7); 
+  font-family: sans-serif;
+  pointer-events: none; /* クリックや画像のドラッグの邪魔をしない設定 */
+  opacity: 0.9;      /* ほんのり透明感を持たせて馴染ませる */
+}
+
+/* スマホなど画面が狭い時の調整 */
+@media screen and (max-width: 768px) {
+  .copyright-notice {
+    bottom: 12px;
+    left: 12px;
+    font-size: 9px;   /* スマホ表示で見切れないよう少し小さく */
+  }
+}
+
+/* スマホなど画面が狭い時の調整 */
+@media screen and (max-width: 768px) {
+  .copyright-notice {
+    top: 10px;
+    left: 10px;
+    font-size: 9px;  /* スマホで見切れそうな場合は文字を小さく */
+  }
+}
 
 /* 右側：SNS・問い合わせアイコン */
 .sns-links {
@@ -378,7 +423,7 @@ body {
 
 .contact-content h2 {
   text-align: center;
-  color: #00695c;
+  color: #00607b;
   margin-bottom: 0.5rem;
 }
 
@@ -411,7 +456,7 @@ body {
 
 /* 必須マーク */
 .required {
-  background-color: #00695c;
+  background-color: #00607b;
   color: #ffffff;
   font-size: 0.7rem;
   padding: 0.1rem 0.4rem;
@@ -433,7 +478,7 @@ body {
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #00695c;
+  border-color: #00607b;
   background-color: #ffffff;
 }
 
@@ -441,7 +486,7 @@ body {
 .submit-btn {
   width: 100%;
   padding: 0.9rem;
-  background-color: #00695c;
+  background-color: #00607b;
   color: #ffffff;
   border: none;
   border-radius: 4px;
@@ -452,7 +497,7 @@ body {
 }
 
 .submit-btn:hover {
-  background-color: #004d40;
+  background-color: #00607b;
 }
 /* ==========================================
    TOPページ専用：フェードスライドショー & グラデーション
@@ -489,6 +534,12 @@ body {
   object-fit: cover; /* 画面比率が変わっても崩れず綺麗に全体に収める */
   opacity: 0;
   animation: fadeSlide 18s infinite ease-in-out;
+}
+/* スマホ表示（画面幅768px以下）のときだけトリミング位置を変更 */
+@media screen and (max-width: 768px) {
+  .slide-img {
+    object-position: top center; /* 見せたい位置に合わせて top / right 等に変更 */
+  }
 }
 
 /* 3枚の画像を重ねて配置 */
