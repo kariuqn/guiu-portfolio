@@ -537,6 +537,22 @@ header {
 }
 
 /* 画像：枠に合わせてピッタリ拡大縮小 */
+/* --- PC表示での画像ごとのトリミング位置設定 --- */
+
+/* 1枚目の画像の位置 */
+.slide-img:nth-child(1) {
+  object-position: center center; /* 例: 中央上部 */
+}
+
+/* 2枚目の画像の位置 */
+.slide-img:nth-child(2) {
+  object-position: center 80%;
+}
+
+/* 3枚目の画像の位置 */
+.slide-img:nth-child(3) {
+  object-position: center center; /* 例: 中央ど真ん中 */
+}
 .slide-img {
   position: absolute;
   top: 0;
@@ -549,11 +565,24 @@ header {
 }
 /* スマホ表示（画面幅768px以下）のときだけトリミング位置を変更 */
 @media screen and (max-width: 768px) {
-  .slide-img {
-    /* 画像の左端を中心に切り取って表示したい場合は left center を指定します */
+
+  /* 1枚目の画像：左から25%（中間あたり） */
+  .slide-img:nth-child(1) {
+    object-position: 10% top !important;
+  }
+
+  /* 2枚目の画像：中央寄り（または別の位置） */
+  .slide-img:nth-child(2) {
+    object-position:  80% !important;
+  }
+
+  /* 3枚目の画像：完全な左端（または別の位置） */
+  .slide-img:nth-child(3) {
     object-position: 25% top !important;
   }
+
 }
+
 /* 1枚目・2枚目・3枚目の切り替えタイミングずらし */
 .slide-img:nth-child(1) {
   animation-delay: 0s;
