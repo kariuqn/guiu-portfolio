@@ -573,7 +573,7 @@ header {
 
   /* 2枚目の画像：*/
   .slide-img:nth-child(2) {
-    object-position: bottom !important;
+    object-position: 50% 50% !important;
   }
 
   /* 3枚目の画像：完全な左端（または別の位置） */
